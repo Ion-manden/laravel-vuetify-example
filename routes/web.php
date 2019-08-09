@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,10 +11,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-Route::get('/{any}', function () {
-    return view('spa');
-})->where('any', '.*');
-
 Auth::routes();
+
+
+Route::prefix('app')->group(function () { 
+    Route::get('/', function () {
+        return redirect('/app/dashboard');
+    })->where('any', '.*');
+    Route::get('/{any}', function () {
+        return view('spa');
+    })->where('any', '.*');
+});
+

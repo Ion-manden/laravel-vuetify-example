@@ -3,7 +3,7 @@
     max-width="344"
     class="mx-auto"
   >
-    <v-card-title>This is the dashboard</v-card-title>
+    <v-card-title>This is the tasks page</v-card-title>
     <v-card-text>I'm card text</v-card-text>
     <v-card-actions>
       <v-btn text>Click</v-btn>
@@ -13,6 +13,6 @@
 
 <script>
     export default {
-        name: 'dashboard',
+        name: 'tasks',
     }
 </script>
