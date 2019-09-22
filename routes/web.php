@@ -14,12 +14,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
+
 Route::prefix('app')->group(function () { 
-    Route::get('/', function () {
-        return redirect('/app/dashboard');
-    })->where('any', '.*');
-    Route::get('/{any}', function () {
-        return view('spa');
-    })->where('any', '.*');
+    Route::get('/', 'SpaController@index');
+    Route::get('/{any}', 'SpaController@app')->where('any', '.*');
 });
 
